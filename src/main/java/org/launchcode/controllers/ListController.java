@@ -33,7 +33,7 @@ public class ListController {
     public String listColumnValues(Model model, @RequestParam JobFieldType column) {
 
         if (column.equals(JobFieldType.ALL)) {
-            System.out.println("ListController  fffffffffffff ");
+            System.out.println("ListController  Shows up when list allffffffffff ");
             return "redirect:/list/all";
         }
 
