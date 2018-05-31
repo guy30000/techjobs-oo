@@ -25,6 +25,7 @@ public class ListController {
     public String list(Model model) {
         JobFieldType[] fields = JobFieldType.values();
         model.addAttribute("fields", fields);
+        System.out.println(fields + "   ----    ListController  ddddddddddddd ");
         return "list";
     }
 
@@ -32,6 +33,7 @@ public class ListController {
     public String listColumnValues(Model model, @RequestParam JobFieldType column) {
 
         if (column.equals(JobFieldType.ALL)) {
+            System.out.println("ListController  fffffffffffff ");
             return "redirect:/list/all";
         }
 

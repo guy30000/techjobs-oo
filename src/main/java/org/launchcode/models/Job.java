@@ -31,7 +31,7 @@ public class Job {
         coreCompetency = aSkill;
 
     }
-
+//These are part of the search and list.  Returns the list
     public String getName() {
         return name;
     }
@@ -75,7 +75,7 @@ public class Job {
     public int getId() {
         return id;
     }
-
+////end listing and searhc stuff
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

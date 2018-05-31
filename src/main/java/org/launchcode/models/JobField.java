@@ -24,18 +24,21 @@ public class JobField {
     }
 
     public String getValue() {
+        //System.out.println(" JOBField Loads on addlinkDDDDDDDDDDDDDDDDDD");
         return value;
     }
 
     public void setValue(String aValue) {
         value = aValue;
     }
-
+///This is part of searching and listing all jobs
     public String toString() {
+        //System.out.println(" JOBField loads when list cat selected and final selection aaaaaaaaaaaaaaaaaaaaaaa"); //
         return value;
     }
 
     public int getId() {
+        //System.out.println(" JOBField Loads on addlinkbbbbbbbbbbbbbbbbbbbbb");
         return id;
     }
 
@@ -55,6 +58,7 @@ public class JobField {
 
     @Override
     public int hashCode() {
+        //System.out.println(" JOBField Loads on addlink, and list cat  selected idididididi");
         return id;
     }
 
