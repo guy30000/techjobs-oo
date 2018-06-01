@@ -58,7 +58,7 @@ public class JobField {
 
     @Override
     public int hashCode() {
-        //System.out.println(" JOBField Loads on addlink, and list cat  selected idididididi");
+        //System.out.println(" JOBField Loads on addlink, and list cat  selected iiIIIIIIISi");
         return id;
     }
 

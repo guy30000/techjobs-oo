@@ -1,5 +1,7 @@
 package org.launchcode.controllers;
 
+import org.launchcode.models.Job;
+import org.launchcode.models.JobField;
 import org.launchcode.models.forms.JobForm;
 import org.launchcode.models.data.JobData;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 /**
  * Created by LaunchCode
@@ -22,8 +25,14 @@ public class JobController {
     // The detail display for a given Job at URLs like /job?id=17
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model, int id) {
-        System.out.println("Jobcontroller ------- fffffffffffffff ");
+        System.out.println(id + "Jobcontroller ------- /job?id=17fffffffjob-detail templatef ");
         // TODO #1 - get the Job with the given ID and pass it into the view
+        //ArrayList<Job> someJob = jobData.findByColumnAndValue();
+
+        //id =  JobData.getId();
+        Job someJob = jobData.findById(id);
+        System.out.println(someJob.toString() + "XXX  " + id + "  job nob job asdffffffffffdetail templatef ");
+        model.addAttribute("items", someJob);
 
         return "job-detail";
     }

@@ -34,8 +34,10 @@ public class SearchController {
 
         if (searchForm.getSearchField().equals(JobFieldType.ALL)) {
             jobs = jobData.findByValue(searchForm.getKeyword());
+            System.out.println("SearchController  Search all KKKKKKKKKKKKKKKKKKK");
         } else {
             jobs = jobData.findByColumnAndValue(searchForm.getSearchField(), searchForm.getKeyword());
+            System.out.println("SearchController  Search cat jjjjjjjjjjjjjjjjjj");
         }
 
         model.addAttribute("jobs", jobs);
