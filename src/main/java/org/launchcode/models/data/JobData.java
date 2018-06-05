@@ -37,10 +37,8 @@ public class JobData {
         for (Job job : jobs) {
             ///this looks like it finds a specific job by id
             if (job.getId() == id)
-                System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYY");
                 return job;
         }
-        System.out.println(" VVVVVVVVVVVVVVVVVVVVVVVVVVVV");
         return null;
     }
     public ArrayList<Job> findAll() {

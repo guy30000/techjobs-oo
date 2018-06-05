@@ -27,12 +27,18 @@ public class JobController {
     public String index(Model model, int id) {
         System.out.println(id + "Jobcontroller ------- /job?id=17fffffffjob-detail templatef ");
         // TODO #1 - get the Job with the given ID and pass it into the view
-        //ArrayList<Job> someJob = jobData.findByColumnAndValue();
 
-        //id =  JobData.getId();
-        Job someJob = jobData.findById(id);
-        System.out.println(someJob.toString() + "XXX  " + id + "  job nob job asdffffffffffdetail templatef ");
-        model.addAttribute("items", someJob);
+        Job someJobV = jobData.findById(id); // creating a variable  G
+
+        // doing nothing now---  someJobV.getCoreCompetency().getValue(); //get core copetency is a clase
+
+        String jobName = someJobV.getName();        // passes part to a vairable g2
+
+        model.addAttribute("items", jobName);
+
+
+        System.out.println(someJobV.toString() + "XXX  " + jobName + "  job nob job asdffffffffffdetail templatef ");
+
 
         return "job-detail";
     }

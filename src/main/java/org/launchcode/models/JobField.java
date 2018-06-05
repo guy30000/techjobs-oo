@@ -23,10 +23,7 @@ public class JobField {
         return this.value.toLowerCase().contains(value.toLowerCase());
     }
 
-    public String getValue() {
-        //System.out.println(" JOBField Loads on addlinkDDDDDDDDDDDDDDDDDD");
-        return value;
-    }
+    public String getValue() { return value; }
 
     public void setValue(String aValue) {
         value = aValue;
