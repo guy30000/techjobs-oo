@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -37,18 +38,12 @@ public class JobController {
         PositionType jobPositionType = someJobV.getPositionType();
         CoreCompetency jobCoreCompetency = someJobV.getCoreCompetency();
 
-
         //model.addAttribute("view_item_veraible", contorller_item_variable);
         model.addAttribute("name", jobName);
         model.addAttribute("employer", jobEmployer);
         model.addAttribute("location", jobLocation);
         model.addAttribute("positionType", jobPositionType);
         model.addAttribute("coreCompetency", jobCoreCompetency);
-
-
-
-
-
 
         System.out.println(someJobV.toString() + "XXX  " + jobName + "  job nob job asdffffffffffdetail templatef " + jobEmployer + jobLocation + jobPositionType+ jobCoreCompetency);
 
@@ -65,13 +60,18 @@ public class JobController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Model model, @Valid JobForm jobForm, Errors errors) {
+    public String add(Model model, @Valid JobForm jobForm, Errors errors,
+                      @RequestParam String employerId,
+                      @RequestParam String locationId,
+                      //@RequestParam String coreCompetencyId,
+                      @RequestParam String positionTypeId) {
 
         // TODO #6 - Validate the JobForm model, and if valid, create a
         // new Job and add it to the jobData data store. Then
         // redirect to the job detail view for the new Job.
-        System.out.println("Jobcontroller shows up when submitting the add wwwwwwwwwwwwwww ");
-        return "";
+
+        System.out.println("Jobcontroller shows up when submitting the add wwwwwwwwwwwwwww "  + " E= "  employerId +" L= " locationId  );
+        return "new-job";
 
     }
 }
