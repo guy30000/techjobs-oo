@@ -1,7 +1,6 @@
 package org.launchcode.controllers;
 
-import org.launchcode.models.Job;
-import org.launchcode.models.JobField;
+import org.launchcode.models.*;
 import org.launchcode.models.forms.JobForm;
 import org.launchcode.models.data.JobData;
 import org.springframework.stereotype.Controller;
@@ -33,15 +32,30 @@ public class JobController {
         // doing nothing now---  someJobV.getCoreCompetency().getValue(); //get core copetency is a clase
 
         String jobName = someJobV.getName();        // passes part to a vairable g2
+        Employer jobEmployer = someJobV.getEmployer();
+        Location jobLocation = someJobV.getLocation();
+        PositionType jobPositionType = someJobV.getPositionType();
+        CoreCompetency jobCoreCompetency = someJobV.getCoreCompetency();
 
-        model.addAttribute("items", jobName);
+
+        //model.addAttribute("view_item_veraible", contorller_item_variable);
+        model.addAttribute("name", jobName);
+        model.addAttribute("employer", jobEmployer);
+        model.addAttribute("location", jobLocation);
+        model.addAttribute("positionType", jobPositionType);
+        model.addAttribute("coreCompetency", jobCoreCompetency);
 
 
-        System.out.println(someJobV.toString() + "XXX  " + jobName + "  job nob job asdffffffffffdetail templatef ");
+
+
+
+
+        System.out.println(someJobV.toString() + "XXX  " + jobName + "  job nob job asdffffffffffdetail templatef " + jobEmployer + jobLocation + jobPositionType+ jobCoreCompetency);
 
 
         return "job-detail";
     }
+
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(Model model) {

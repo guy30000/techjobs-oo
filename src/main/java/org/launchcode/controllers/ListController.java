@@ -37,7 +37,6 @@ public class ListController {
             return "redirect:/list/all";
         }
 
-
         ArrayList<? extends JobField> items;
 
         switch(column) {
