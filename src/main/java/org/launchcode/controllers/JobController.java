@@ -61,16 +61,17 @@ public class JobController {
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(Model model, @Valid JobForm jobForm, Errors errors,
+                      @RequestParam String name,
                       @RequestParam String employerId,
                       @RequestParam String locationId,
-                      //@RequestParam String coreCompetencyId,
+                      @RequestParam String coreCompetencyId,
                       @RequestParam String positionTypeId) {
 
         // TODO #6 - Validate the JobForm model, and if valid, create a
         // new Job and add it to the jobData data store. Then
         // redirect to the job detail view for the new Job.
 
-        System.out.println("Jobcontroller shows up when submitting the add wwwwwwwwwwwwwww "  + " E= "  employerId +" L= " locationId  );
+        System.out.println("Jobcontroller shows up -------------------   n= " + name  + " E= " + employerId +" L= " + locationId + " P= " + positionTypeId +  " C= " + coreCompetencyId);
         return "new-job";
 
     }
