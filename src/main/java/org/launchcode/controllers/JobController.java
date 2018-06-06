@@ -6,6 +6,7 @@ import org.launchcode.models.data.JobData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,7 +46,7 @@ public class JobController {
         model.addAttribute("positionType", jobPositionType);
         model.addAttribute("coreCompetency", jobCoreCompetency);
 
-        System.out.println(someJobV.toString() + "XXX  " + jobName + "  job nob job asdffffffffffdetail templatef " + jobEmployer + jobLocation + jobPositionType+ jobCoreCompetency);
+        System.out.println("JObController " + jobName + "  atef " + jobEmployer + jobLocation + jobPositionType+ jobCoreCompetency);
 
 
         return "job-detail";
@@ -64,14 +65,21 @@ public class JobController {
                       @RequestParam String name,
                       @RequestParam String employerId,
                       @RequestParam String locationId,
+                      @RequestParam String positionTypeId,
                       @RequestParam String coreCompetencyId,
-                      @RequestParam String positionTypeId) {
+                    @ModelAttribute JobController newJob){
+
 
         // TODO #6 - Validate the JobForm model, and if valid, create a
         // new Job and add it to the jobData data store. Then
         // redirect to the job detail view for the new Job.
+        //jobForm is unvestigation
+        //model.addAttribute("name", "employerId", "locationId", "positionTypeId", "coreCompetencyId");
+        //rrayList<Job> newJob;
+        //jobData.add(newJob); //This is needed to add the job. Need to figure out how to make it array-like
 
-        System.out.println("Jobcontroller shows up -------------------   n= " + name  + " E= " + employerId +" L= " + locationId + " P= " + positionTypeId +  " C= " + coreCompetencyId);
+         System.out.println("Jobcontroller Shows up on add--- nacho = "+  " n= " + name  + " E= " + employerId +" L= " + locationId + " P= " + positionTypeId +  " C= " + coreCompetencyId);
+        System.out.println("E= " + jobForm +" L= " + newJob + " P= " + positionTypeId +  " C= " + coreCompetencyId);
         return "new-job";
 
     }
