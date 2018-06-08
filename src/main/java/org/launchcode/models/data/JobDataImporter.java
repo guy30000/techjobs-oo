@@ -78,7 +78,7 @@ public class JobDataImporter {
 
                 Job newJob = new Job(record.get("name"), emp, loc, posType, coreComp);
 
-                jobData.add(newJob);
+                jobData.add(newJob);  // This has newJob
             }
 
             // flag the data as loaded, so we don't do it twice

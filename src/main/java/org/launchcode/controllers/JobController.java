@@ -61,26 +61,35 @@ public class JobController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Model model, @Valid JobForm jobForm, Errors errors,
-                      @RequestParam String name,
-                      @RequestParam String employerId,
-                      @RequestParam String locationId,
-                      @RequestParam String positionTypeId,
-                      @RequestParam String coreCompetencyId,
-                    @ModelAttribute JobController newJob){
+    public String add(Model model, @Valid JobForm jobForm, Errors errors
+//                      @RequestParam String name,  //it appears not of these request params are needed
+//                      @RequestParam String employerId,
+//                      @RequestParam String locationId,
+//                      @RequestParam String positionTypeId,
+//                      @RequestParam String coreCompetencyId
+    )     {
 
 
         // TODO #6 - Validate the JobForm model, and if valid, create a
         // new Job and add it to the jobData data store. Then
         // redirect to the job detail view for the new Job.
         //jobForm is unvestigation
-        //model.addAttribute("name", "employerId", "locationId", "positionTypeId", "coreCompetencyId");
-        //rrayList<Job> newJob;
-        //jobData.add(newJob); //This is needed to add the job. Need to figure out how to make it array-like
 
-         System.out.println("Jobcontroller Shows up on add--- nacho = "+  " n= " + name  + " E= " + employerId +" L= " + locationId + " P= " + positionTypeId +  " C= " + coreCompetencyId);
-        System.out.println("E= " + jobForm +" L= " + newJob + " P= " + positionTypeId +  " C= " + coreCompetencyId);
-        return "new-job";
+        if (errors.hasErrors()){
+            System.out.println(" error for some reason" );
+            return "new-job";
+        }
+
+        ////this is the stuped lin that took me forever to get
+        Job newJob = new Job(jobForm.getName(),jobForm.getEmployer(), jobForm.getLocation(), jobForm.getPositionType(), jobForm.getCoreCompetency());
+        jobData.add(newJob); //This is needed to add the job. Need to figure out how to make it array-like
+
+        //System.out.println("Jobcontroller Shows up on add--- nacho = "+  " n= " + name );
+        //System.out.println(" E= " + jobForm +" L= "  + " P= " + positionTypeId +  " C= " + coreCompetencyId);
+        //System.out.println(" n= " + name  + "E= " + emp +" L= " + loc + " P= " + posType +  " C= " + coreComp);
+        System.out.println(" added" );
+        return "redirect:/job?id=" +newJob.getId();
+        //return "new-job";
 
     }
 }
