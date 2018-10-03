@@ -26,6 +26,10 @@
           <option name="url" value="https://github.com/guy30000/cheese-mvc-persistent.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/LaunchCodeEducation/sorting-cities.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\_SSD Libraries\Google Drive\Launch Code\Unit_3" />
