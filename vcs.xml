@@ -42,6 +42,10 @@
           <option name="url" value="http://github.com" />
           <option name="userName" value="billygcasey@hotmail.com" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/LaunchCodeEducation/java-exercises.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\_SSD Libraries\Google Drive\Launch Code\Unit_3" />
